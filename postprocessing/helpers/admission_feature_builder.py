@@ -193,18 +193,3 @@ def post_process_admissions(hids, hid_to_subject_map, version):
         concurrent.futures.wait(futures)
 
     print("   [ DONE ]")
-
-
-# VERSION = 'v2_402h'
-# df = pd.read_csv("data/cohort/cohort_clinical_outcome_REAL_v2_los15.csv.gz")
-# admission_to_subject_dict = dict(zip(df['hadm_id'], df['subject_id']))
-# hids = list(set(df['hadm_id']))
-# process(hids, admission_to_subject_dict, version=VERSION)
-
-
-
-# VERSION = 'v3_All'
-# df = pd.read_csv("data/cohort/cohort_clinical_outcome_REAL_v3_All.csv.gz")
-# admission_to_subject_dict = dict(zip(df['hadm_id'], df['subject_id']))
-# hids = list(set(df['hadm_id']))
-# process(hids, admission_to_subject_dict, version=VERSION)
