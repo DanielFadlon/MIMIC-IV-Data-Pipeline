@@ -1,22 +1,29 @@
 # MIMIC-IV
 
+> **Note:** This repository is a fork of the original [MIMIC-IV Data Pipeline](https://github.com/healthylaife/MIMIC-IV-Data-Pipeline). The original pipeline (`clinical_outcomes_pipeline.ipynb`) has been extended with a custom pipeline (`clinical_outcomes_pipeline.ipynb`) that implements specific preprocessing and cohort generation workflows tailored for mortality and heart failure prediction tasks.
 
-**MIMIC-IV data pipeline** is an end-to-end pipeline that offers a configurable framework to prepare MIMIC-IV data for the downstream tasks. 
-The pipeline cleans the raw data by removing outliers and allowing users to impute missing entries. 
-It also provides options for the clinical grouping of medical features using standard coding systems for dimensionality reduction.  
-All of these options are customizable for the users, allowing them to generate a personalized  patient cohort. 
-The customization steps can be recorded for the reproducibility of the overall framework. 
+# Mimic-IV (Clinical Outcome Pipeline)
+To reproduce the MIMIC-IV data we used follow `clinical_outcomes_pipeline.ipynb`
+
+
+# MIMIC-IV (Main pipeline)
+
+**MIMIC-IV data pipeline** is an end-to-end pipeline that offers a configurable framework to prepare MIMIC-IV data for the downstream tasks.
+The pipeline cleans the raw data by removing outliers and allowing users to impute missing entries.
+It also provides options for the clinical grouping of medical features using standard coding systems for dimensionality reduction.
+All of these options are customizable for the users, allowing them to generate a personalized  patient cohort.
+The customization steps can be recorded for the reproducibility of the overall framework.
 The pipeline produces a smooth time-series dataset by binning the sequential data into equal-length time intervals and allowing for filtering of the time-series length according to the user's preferences.
-Besides the data processing modules, our pipeline also includes two additional modules for modeling and evaluation. 
-For modeling, the pipeline includes several commonly used sequential models for performing prediction tasks. 
-The evaluation module offers a series of standard methods for evaluating the performance of the created models. 
+Besides the data processing modules, our pipeline also includes two additional modules for modeling and evaluation.
+For modeling, the pipeline includes several commonly used sequential models for performing prediction tasks.
+The evaluation module offers a series of standard methods for evaluating the performance of the created models.
 This module also includes options for reporting individual and group fairness measures.
 
-### Customization: 
+### Customization:
 This customization leverages the pipeline to retrieve data from the first 15 days of each admissions.
 Pipeline Steps
 
-Data Retrieval: 
+Data Retrieval:
 - Extract data covering the initial 15 days of hospitalization for admissions related to mortality outcomes.
 
 Cohort Intersection:
